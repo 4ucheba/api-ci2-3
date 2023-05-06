@@ -12,14 +12,14 @@ class PostmanEchoTest {
         given()
                 .baseUri("https://postman-echo.com")
                 .contentType("text/plain; charset=UTF-8")
-                .body("test-message") // отправляемые данные (заголовки и query можно выставлять аналогично)
+                .body("test message") // отправляемые данные (заголовки и query можно выставлять аналогично)
                 // Выполняемые действия
                 .when()
                 .post("/post")
                 // Проверки
                 .then()
                 .statusCode(200)
-                .body("data", equalTo("test-message"))
+                .body("data", equalTo("test message"))
         ;
     }
 }
